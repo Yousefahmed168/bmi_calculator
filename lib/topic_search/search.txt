@@ -1,0 +1,24 @@
+Flutter uses a widget tree to build the UI. Every part of the UI is a widget, from the smallest element like buttons and text to larger structures like layouts.
+
+Widgets are classified into two main categories : Stateless and Stateful.
+
+The lifecycle of a stateful widget involves multiple stages : 
+
+"""Initialization"""
+
+createState(): Called when the framework is require to create a state object for the stateful widget.
+initState(): Called once when the state object is created. This is where you initialize any state variables.
+
+"""Configuration"""
+
+didChangeDependencies(): Called when a dependency of the state object changes. This can happen when an inherited widget in the widget tree changes.
+build(): Called whenever the widget needs to be rendered. This method can be called multiple times during the lifecycle of a stateful widget(such as when the user interact with the UI or when the state changes).
+
+"""Updates"""
+
+setState(): It notifies the framework that the state of the widget has changed, which triggers a rebuild of the widget(build() to be called again to update the UI).
+
+"""Cleanup"""
+
+deactivate(): Called when the state object is removed from the tree but might be reinserted before the current frame is finished.
+dispose(): Called when the state object is permanently removed from the tree. This is where you dispose of resources (e.g., streams, animations).
